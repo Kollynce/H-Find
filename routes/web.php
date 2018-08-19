@@ -23,18 +23,23 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator', 'we
    Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
 });
 
+Route::get('property.admin', [
+    'as' => 'property.admin', 'uses' => 'SubmitController@admin'
+]);
+Route::resource('/profile','ProfileController');
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/property', 'DynamicPagesController@property')->name('property');
 Route::get('/contact', 'StaticPageController@contact')->name('contact');
+Route::get('/property/posted','SubmitController@posted');
+Route::resource('/property','SubmitController');
+Route::get('profile.index', [
+    'as' => 'profile.index', 'uses' => 'ProfileController@index'
+]);
+Route::resource('/profile','ProfileController');
 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'StaticPageController@profile')->name('profile');
-    Route::get('/posts', 'DynamicPagesController@posts')->name('posts');
     Route::post('/profile', 'StaticPageController@avatar')->name('update');
-    Route::get('/submit', 'StaticPageController@submit')->name('submit');
-    Route::get('/edit_property', 'DynamicPagesController@editproperty');
-    Route::post('/my_property/submission', 'DynamicPagesController@submit_property');
-    Route::get('/my_property', 'DynamicPagesController@getProperty');
-});
 
+});

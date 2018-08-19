@@ -20,6 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('user_type',50)->default('user');
             $table->string('password');
+            $table->integer('phone');
+            $table->text('about');
+            $table->string('facebook');
+            $table->string('instagram');
             $table->rememberToken();
             $table->timestamps();
         });

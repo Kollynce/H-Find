@@ -28,12 +28,6 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="mobile" class="col-sm-2 col-md-2 col-form-label">Mobile</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Mobile Number">
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="email" class="col-sm-2 col-md-2 col-form-label">Email</label>
                     <div class="col-sm-10">
                         <input type="email" name="email" class="form-control" id="email" placeholder="example@mail.com">
@@ -45,29 +39,10 @@
                     <textarea type="text" name="about" class="form-control" id="about" placeholder="Write something about you"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                    <a class="btn-blue border_radius" href="#">Save Changes</a>
-                </div>
-
-            </form>
-        </div>
-
-    </div>
-
-    <div class="row pt-3 pb-4">
-        <div class="col-md-6">
-            <h3>My Social Networks</h3>
-            <form action="" class="pt-2">
                 <div class="form-group row">
                     <label for="facebook" class="col-sm-2 col-md-2 col-form-label">Facebook</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="facebook" placeholder="Http//facebook.com">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="twitter" class="col-sm-2 col-md-2 col-form-label">Twitter</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="twitter" placeholder="Http//twitter.com">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -76,20 +51,16 @@
                         <input type="text" class="form-control" id="instagram" placeholder="Http//instagram.com">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="linkedin" class="col-sm-2 col-md-2 col-form-label">Linkedin</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="linkedin" placeholder="Http//linkedin.com">
-                    </div>
-                </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                    <a class="btn-blue border_radius" href="#">Save</a>
+                    <a class="btn-blue border_radius" href="#">Save Changes</a>
                 </div>
             </form>
         </div>
-        <div class="col-md-6">
-            <h3>Change Your Password</h3>
-            <form>
+
+        <div class="col-md-12">
+            <form action="">
+                <h3>Change Your Password</h3>
+
                 <div class="form-group">
                     <label for="current">Current Password</label>
                     <input type="password" class="form-control" id="current" placeholder="Current Password">
@@ -105,6 +76,9 @@
                 <button type="submit" class="btn btn-blue">Update</button>
             </form>
         </div>
+
+    </div>
+
     </div>
 </div>
 

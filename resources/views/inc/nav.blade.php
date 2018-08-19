@@ -13,10 +13,10 @@
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/property') }}">Properties</a>
+                <a class="nav-link" href="{{ route('property.posted') }}">Properties</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">Agents</a>
+                <a class="nav-link" href="{{ route('profile.index') }}">Agents</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="padding-right: 20px;" href="{{ url('/contact') }}">Contact Us</a>

@@ -1,4 +1,4 @@
-@if(Request::is('login','register'))
+@if(Request::is('login','register', 'profile.index'))
     <section class="page-banner padding">
         <div class="container">
             <div class="row">
@@ -11,6 +11,10 @@
                         <h1 class="text-uppercase">Welcome Register</h1>
                         <p>Serving you since 2018. Partner with the best housing company.</p>
                     @endif
+                        @if(Request::is('profile.index'))
+                            <h1 class="text-uppercase">Hello Meet Our Agents</h1>
+                            <p>Serving you since 2018. Partner with the best housing company.</p>
+                        @endif
                 </div>
             </div>
         </div>

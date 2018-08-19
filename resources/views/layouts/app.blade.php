@@ -21,6 +21,19 @@
         <link href="{{ asset('css/reality-icon.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/foundation-icon.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/closedhand.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/cudeportfolio.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/dropzone.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/editor.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jquery.fancybox.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/navigation.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.transitions.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/range-Slider.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/settings.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/search.css') }}" rel="stylesheet">
 
 
     </head>
@@ -28,7 +41,7 @@
         <div id="app" >
             @include('inc.nav')
             <main class="py-0">
-                <div class="pb-2">
+                <div class="pb-0">
                     @include('inc.parallax')
                 </div>
                 @yield('content')
@@ -36,12 +49,60 @@
             @include('inc.footer')
         </div>
 
+
         <!---------------------- Scripts -------------------------------------->
+
+        <script type="text/javascript" language="javascript">
+            function myMap() {
+                var mapCanvas = document.getElementById("single_map");
+                var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+                var mapOptions = {center: myCenter, zoom: 5};
+                var map = new google.maps.Map(mapCanvas,mapOptions);
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                    animation:google.maps.Animation.BOUNCE,
+                    icon: "images/map_marker.png"
+                });
+                marker.setMap(map);
+            }
+
+        </script>
+
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/bootsnav.js') }}" defer></script>
         <script src="{{ asset('js/editor.js') }}" defer></script>
         <script src="{{ asset('js/jquery-2.1.4.js') }}" defer></script>
         <script src="{{ asset('js/selectbox-0.2.min.js') }}" defer></script>
         <script src="{{ asset('js/jquery.parallax-1.1.3.js') }}" defer></script>
+        <script src="{{ asset('js/custom.js') }}" defer></script>
+        <script src="{{ asset('js/contact.js') }}" defer></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+        <script src="{{ asset('js/dropzone.js') }}" defer></script>
+        <script src="{{ asset('js/gmaps.js.js') }}" defer></script>
+        <script src="{{ asset('js/google-map.js') }}" defer></script>
+        <script src="{{ asset('js/google-map-one.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.appear.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.cubeportfolio.min.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.fancybox.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.themepunch.revolution.min.js') }}" defer></script>
+        <script src="{{ asset('js/jquery.themepunch.tools.min.js') }}" defer></script>
+        <script src="{{ asset('js/jquery-countTo.js') }}" defer></script>
+        <script src="{{ asset('js/masonry.pkgd.min.js') }}" defer></script>
+        <script src="{{ asset('js/near-by-place.js') }}" defer></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
+        <script src="{{ asset('js/range-Slider.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.action.min.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.layeranimation.min.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.navigation.min.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.parallax.min.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.slideanims.min.js') }}" defer></script>
+        <script src="{{ asset('js/revolution.extension.video.min.js') }}" defer></script>
+        <script src="{{ asset('js/zelect.js') }}" defer></script>
+        <script src="{{ asset('js/function.js') }}" defer></script>
+
+        <script type="text/javascript">
+            $("#txtEditor").Editor();
+            $('[data-toggle="tooltip"]').tooltip();
+        </script>
     </body>
 </html>

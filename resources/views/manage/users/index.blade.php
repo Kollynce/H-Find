@@ -30,6 +30,11 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at->toFormattedDateString()}}</td>
                             <td><a class="btn btn-primary1" href="{{route('users.edit',$user->id)}}">Edit</a></td>
+                            <td>
+                                {{ Form::open(array('method' => 'delete', 'route' => ['users.destroy' , $user->id ] )) }}
+                                <button type="submit" class="icons icon-trash py-2 px-2 btn btn-danger">Delete</button>
+                                {{ Form::close() }}
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
