@@ -18,64 +18,45 @@
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-md-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                        <h4 class="form-control">{{$user->name}}</h4>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="phone" class="col-sm-2 col-md-2 col-form-label">Phone</label>
                     <div class="col-sm-10">
-                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone Number">
+                        <h4 class="form-control">{{$user->phone}}</h4>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-md-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="example@mail.com">
+                        <h4 class="form-control">{{$user->email}}</h4>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="about" class="col-sm-2 col-md-2 col-form-label">About</label>
                     <div class="col-sm-10">
-                    <textarea type="text" name="about" class="form-control" id="about" placeholder="Write something about you"></textarea>
+                        <h4 class="form-control">{{$user->about}}</h4>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="facebook" class="col-sm-2 col-md-2 col-form-label">Facebook</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="facebook" placeholder="Http//facebook.com">
+                        <h4 class="form-control">{{$user->facebook}}</h4>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="instagram" class="col-sm-2 col-md-2 col-form-label">Instagram</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="instagram" placeholder="Http//instagram.com">
+                        <h4 class="form-control">{{$user->instagram}}</h4>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                    <a class="btn-blue border_radius" href="#">Save Changes</a>
+                    <a class="btn-blue border_radius" href="{{route('profile.edit', $user->id)}}">Edit</a>
                 </div>
             </form>
         </div>
 
-        <div class="col-md-12">
-            <form action="">
-                <h3>Change Your Password</h3>
-
-                <div class="form-group">
-                    <label for="current">Current Password</label>
-                    <input type="password" class="form-control" id="current" placeholder="Current Password">
-                </div>
-                <div class="form-group">
-                    <label for="new">New Password</label>
-                    <input type="password" class="form-control" id="new" placeholder="New Password">
-                </div>
-                <div class="form-group">
-                    <label for="confirm">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm" placeholder="Confirm Password">
-                </div>
-                <button type="submit" class="btn btn-blue">Update</button>
-            </form>
-        </div>
 
     </div>
 

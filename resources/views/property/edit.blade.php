@@ -85,13 +85,6 @@
                             {{Form::text('address', $submit->map,['class' => 'single-query form-group bottom20'])}}
                         </div>
                     </div>
-                    <div class="row">
-                        <h3 class="bottom15 margin40">Posted By</h3>
-                        <div class="col-md-12">
-                            {{Form::label('owner', 'Posted By :')}}
-                            {{Form::text('owner', $submit->owner,['class' => 'single-query form-group bottom20'])}}
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     {{Form::submit('Update',['class' => 'btn btn-primary1 ' ])}}

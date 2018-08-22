@@ -35,6 +35,9 @@ Route::resource('/property','SubmitController');
 Route::get('profile.index', [
     'as' => 'profile.index', 'uses' => 'ProfileController@index'
 ]);
+Route::post('update/{id}', [
+    'as' => 'profile.update', 'uses' => 'StaticPageController@update'
+]);
 Route::resource('/profile','ProfileController');
 
 

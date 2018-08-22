@@ -29,4 +29,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function submit()
+    {
+        return $this->hasMany('App\Submit');
+    }
+
 }

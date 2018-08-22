@@ -15,7 +15,11 @@ class CreateSubmitsTable extends Migration
     {
         Schema::create('submits', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('owner');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('CASCADE');
             $table->string('title');
             $table->string('location');
             $table->string('status');

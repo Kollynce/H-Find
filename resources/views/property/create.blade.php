@@ -85,13 +85,6 @@
                             {{Form::text('address', '',['class' => 'single-query form-group bottom20','placeholder' => 'Enter Location'])}}
                         </div>
                     </div>
-                    <div class="row">
-                        <h3 class="bottom15 margin40">Posted By</h3>
-                        <div class="col-md-12">
-                            {{Form::label('owner', 'Posted By :')}}
-                            {{Form::text('owner', '',['class' => 'single-query form-group bottom20','placeholder' => 'Please Write Your User Name'])}}
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     {{Form::submit('submit',['class' => 'btn btn-primary1 ' ])}}

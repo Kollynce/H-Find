@@ -40,7 +40,9 @@
                     <div class="dropdown-menu dropdown-menu-right icon pb-2" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item icon-notification pb-2" href="#">  Notifications</a>
                         <a class="dropdown-item icon-profile pb-2" href="{{url('/profile')}}">  Profile</a>
+                        @if(Gate::check('superadmin') || Gate::check('admin'))
                         <a class="dropdown-item icon-settings pd-2" href="{{route('users.index')}}">  Manage</a>
+                        @endif
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-item icon-lock" href="{{ route('logout') }}"

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Submit;
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class SubmitController extends Controller
 {
@@ -22,7 +24,8 @@ class SubmitController extends Controller
      */
     public function index()
     {
-        $submit = Submit::all();
+        $id = \Auth::user()->id;
+        $submit = Submit::whereUserId($id)->get();
         return view('property.index')->with('submit',$submit);
     }
 
@@ -70,8 +73,7 @@ class SubmitController extends Controller
             'tv' => 'required',
             'garages' => 'required',
             'pool' => 'required',
-            'description' => 'required',
-            'owner' => 'required'
+            'description' => 'required'
         ]);
 
         $submit = new Submit;
@@ -95,8 +97,7 @@ class SubmitController extends Controller
         $submit->garages = $request->input('garages');
         $submit->pool = $request->input('pool');
         $submit->description = $request->input('description');
-        $submit->owner = $request->input('owner');
-
+        $submit->user_id = auth()->user()->id;
         //upload
 
 
@@ -138,7 +139,34 @@ class SubmitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $submit = new Submit;
+        $submit->title = $request->input('title');
+        $submit->location = $request->input('location');
+        $submit->status = $request->input('status');
+        //$submit->property = $request->input('image');
+        if ($file = $request->file('image')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property'] = $name;
+        }
+
+        $submit->video = $request->input('video');
+        $submit->map = $request->input('address');
+        $submit->price = $request->input('price');
+        $submit->size = $request->input('size');
+        $submit->bathroom = $request->input('bathroom');
+        $submit->bedroom = $request->input('bedroom');
+        $submit->tv = $request->input('tv');
+        $submit->garages = $request->input('garages');
+        $submit->pool = $request->input('pool');
+        $submit->description = $request->input('description');
+        $submit->user_id = auth()->user()->id;
+        //upload
+
+        $submit->save();
+
+        return redirect()->route('property.show',$id);
     }
 
     /**

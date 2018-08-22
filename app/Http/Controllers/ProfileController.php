@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -14,7 +15,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        //$users = User::all();
+        $users = DB::table('users')
+            ->where('user_type','agent')
+            ->get();
         return view('profile.index')->with('users', $users);
     }
 
@@ -25,7 +29,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        //return view('profile.create');
     }
 
     /**
@@ -36,7 +40,19 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $users = new User();
+        $users-> name = $request -> input('name');
+        $users-> phone = $request -> input('phone');
+        $users-> email = $request -> input('email');
+        $users-> about = $request -> input('about');
+        $users-> facebook = $request -> input('facebook');
+        $users-> instagram = $request -> input('instagram');
+        $users-> password = $request -> input('password');
+
+        $users ->save();
+        //return redirect()->route('users.show',$id);
+        return redirect('/',$users->id)->with('success', 'Property has been Submitted');
     }
 
     /**
@@ -47,7 +63,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('profile.show')->with('users',$users);
     }
 
     /**
@@ -58,7 +75,10 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+//        $id = \Auth::user()->id;
+//        $users = User::whereUserId($id)->get();
+        $users = User::findOrFail($id);
+        return view('profile.edit')->with('users',$users);
     }
 
     /**
@@ -70,7 +90,22 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'email' => 'required|email|unique:users,email,'.$id,
+        ]);
+
+        $users = new User();
+        $users-> name = $request -> input('name');
+        $users-> phone = $request -> input('phone');
+        $users-> email = $request -> input('email');
+        $users-> about = $request -> input('about');
+        $users-> facebook = $request -> input('facebook');
+        $users-> instagram = $request -> input('instagram');
+        $users-> password = $request -> input('password');
+
+        $users ->save();
+        return redirect()->route('profile.show',$id);
+        //return redirect('profile.show',$id)->with('success', 'Property has been Submitted');
     }
 
     /**

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 use Image;
 
 class StaticPageController extends Controller
@@ -35,6 +37,27 @@ class StaticPageController extends Controller
             $user-> save();
         }
         return view('profile', array('user'=> Auth::user()));
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id){
+
+        $users = User::findOrFail($id);
+        $users->name = $request -> name;
+        $users->email = $request -> email;
+        $users->password = Hash::make($request->password);
+        $users-> phone = $request -> phone;
+        $users-> about = $request -> about;
+        $users-> facebook = $request -> facebook;
+        $users-> instagram = $request -> instagram;
+
+        $users ->save();
+        return redirect()->route('profile.show',$id);
+        //return redirect('profile.show',$id)->with('success', 'Property has been Submitted');
     }
 
 }
