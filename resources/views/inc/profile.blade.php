@@ -7,7 +7,7 @@
                 <form enctype="multipart/form-data" action="/profile" method="POST"><br>
                     <input type="file" name="avatar">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"> <br>
-                    <input type="submit" class="btn btn-primary1">
+                    <input type="submit" value="Upload Picture" class="btn btn-primary1">
                 </form>
 
             </div>

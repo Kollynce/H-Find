@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary1 sticky-top">
     <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'H-Find') }}
+        <img alt="" src="{{asset('images/logo-white.png')}}">
     </a>
 
     <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportContent">

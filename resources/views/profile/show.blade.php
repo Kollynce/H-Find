@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Instagram:</strong></td>
-                                <td class="text-right">{{$users->facebook}}</td>
+                                <td class="text-right">{{$users->instagram}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -41,6 +41,9 @@
                         </ul>
                     </div>
                 </div>
+
+                {{------------------------form----------------------------}}
+
                 <div class="col-sm-4 bottom40">
                     <form class="callus">
                         <div class="form-group">
@@ -58,6 +61,7 @@
                         <input class="btn-blue uppercase border_radius" value="submit now" type="submit">
                     </form>
                 </div>
+                {{------------------------form----------------------------}}
 
                 <div class="col-sm-4 bottom40">
                     <div class="agent_wrap">
@@ -66,33 +70,7 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="col-md-12 bottom30 top20">
-                    <h2 class="text-uppercase">Bohdan Properites</h2>
-                    <p>We have Properties in these Areas View a list of Featured Properties.</p>
-                </div>
-                <div class="col-sm-6">
-                    <div class="listing_full">
-                        <div class="image">
-                            <img alt="image" src="images/b-d-property.jpg">
-                            <span class="tag_l">Featured</span>
-                            <span class="tag_t">For Sale</span>
-                        </div>
-                        <div class="listing_full_bg">
-                            <div class="listing_inner_full">
-                                <span><a href="#"><i class="icon-like"></i></a></span>
-                                <a href="#.">
-                                    <h3>Park Avenue Apartment</h3>
-                                    <p>Towson London, MR 21501</p>
-                                </a>
-                                <div class="favroute clearfix">
-                                    <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span><span><i class=" icon-microphone"></i>3 Bedrooms</span><span><i class="icon-safety-shower"></i>2 Bedrooms</span><span class="border-l">$38,600 / pm</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>

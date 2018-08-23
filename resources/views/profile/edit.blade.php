@@ -13,8 +13,6 @@
                         <div class="col-md-4">
                             <img src="/uploads/avatar/{{ $users->avatar }}" class="img-responsive" alt="image"
                                  style="width: 200px; height: 200px;"><br><br>
-                            <input type="file" name="avatar"><br><br>
-                            <input type="submit" class="btn btn-primary1">
                         </div>
                         <div class="col-md-8">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

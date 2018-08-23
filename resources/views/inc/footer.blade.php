@@ -34,33 +34,25 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="footer_panel bottom30">
-                    <a href="#." class="logo bottom30"> H-FIND</a>
+                    <a href="#." class="logo bottom30"><img alt="" src="{{asset('images/logo-white.png')}}"></a>
                     <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
                         tempor cum consectetuer
                         adipiscing.
                     </p>
-                    <p class="bottom15">If you are interested in castle do not wait and <a href="#.">BUY IT NOW!</a></p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="footer_panel bottom30">
-                    <h4 class="bottom30 heading">Search by Area</h4>
+                    <h4 class="bottom30 heading">Our Pages</h4>
                     <table style="width:100%;">
                         <tbody>
                         <tr>
                             <td>
                                 <ul class="links">
-                                    <li><a href="#."><i></i>About</a></li>
-                                    <li class="active"><a href="#."><i></i>News</a></li>
-                                    <li><a href="#."> <i></i>Contacts</a></li>
-                                </ul>
-                            </td>
-                            <td class="text-right">
-                                <ul class="links text-left">
-                                    <li><a href="#."><i></i>Services</a></li>
-                                    <li class="active"><a href="#."><i></i>Careers</a></li>
-                                    <li><a href="#."><i></i>Our team</a></li>
-                                    <li><a href="#."><i></i>Our approach</a></li>
+                                    <li><a href="#"><i></i>Home</a></li>
+                                    <li><a href="#"><i></i>Properties</a></li>
+                                    <li><a href="#"><i></i>About</a></li>
+                                    <li><a href="#"> <i></i>Contacts</a></li>
                                 </ul>
                             </td>
                         </tr>
