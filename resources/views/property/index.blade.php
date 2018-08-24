@@ -8,7 +8,7 @@
             @foreach($submit as $submits)
                 <div class="row bg-hover">
                     <div class="col-md-2 col-sm-12 px-3 py-3">
-                        <img class="img-responsive" style="width: 150px; height: 150px; border-radius: 20px;" src="/image/{{$submits->property}}" alt="">
+                        <img class="img-responsive" style="width: 150px; height: 150px; border-radius: 20px;" src="/image/{{$submits->property1}}" alt="">
                     </div>
                     <div class="col-md-7 col-sm-12">
                         <div class="feature-p-text">

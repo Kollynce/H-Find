@@ -23,7 +23,10 @@ class CreateSubmitsTable extends Migration
             $table->string('title');
             $table->string('location');
             $table->string('status');
-            $table->string('property')->default('property.jpg');
+            $table->string('property1')->default('property.jpg');
+            $table->string('property2')->default('property.jpg');
+            $table->string('property3')->default('property.jpg');
+            $table->string('property4')->default('property.jpg');
             $table->string('video');
             $table->string('map');
             $table->integer('price');
@@ -33,6 +36,14 @@ class CreateSubmitsTable extends Migration
             $table->integer('tv');
             $table->integer('garages');
             $table->integer('pool');
+            $table->boolean('conditioning')->dafault(0);
+            $table->boolean('laundry')->dafault(0);
+            $table->boolean('yard')->dafault(0);
+            $table->boolean('gas')->dafault(0);
+            $table->boolean('internet')->dafault(0);
+            $table->boolean('fire')->dafault(0);
+            $table->boolean('cable')->dafault(0);
+            $table->boolean('balcony')->dafault(0);
             $table->text('description');
             $table->timestamps();
         });

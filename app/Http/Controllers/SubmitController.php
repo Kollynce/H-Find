@@ -63,7 +63,7 @@ class SubmitController extends Controller
             'title' => 'required',
             'location' => 'required',
             'status' => 'required',
-            'image' => 'required',
+            'image1' => 'required',
             'video' => 'required',
             'address' => 'required',
             'price' => 'required',
@@ -81,12 +81,36 @@ class SubmitController extends Controller
         $submit->location = $request->input('location');
         $submit->status = $request->input('status');
         //$submit->property = $request->input('image');
-        if ($file = $request->file('image')){
+        //Image upload section //
+        if ($file = $request->file('image1')){
             $name = $file ->getClientOriginalName();
             $file->move('image',$name);
-            $submit['property'] = $name;
+            $submit['property1'] = $name;
         }
-
+        if ($file = $request->file('image2')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property2'] = $name;
+        }
+        if ($file = $request->file('image3')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property3'] = $name;
+        }
+        if ($file = $request->file('image4')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property4'] = $name;
+        }
+        //end of image upload section //
+        $submit->gas = $request->has('gas');
+        $submit->laundry = $request->has('laundry');
+        $submit->yard = $request->has('yard');
+        $submit->internet = $request->has('internet');
+        $submit->conditioning = $request->has('conditioning');
+        $submit->fire = $request->has('fire');
+        $submit->cable = $request->has('cable');
+        $submit->balcony = $request->has('balcony');
         $submit->video = $request->input('video');
         $submit->map = $request->input('address');
         $submit->price = $request->input('price');
@@ -145,11 +169,29 @@ class SubmitController extends Controller
         $submit->location = $request->input('location');
         $submit->status = $request->input('status');
         //$submit->property = $request->input('image');
-        if ($file = $request->file('image')){
+
+        //Image upload section //
+        if ($file = $request->file('image1')){
             $name = $file ->getClientOriginalName();
             $file->move('image',$name);
-            $submit['property'] = $name;
+            $submit['property1'] = $name;
         }
+        if ($file = $request->file('image2')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property2'] = $name;
+        }
+        if ($file = $request->file('image3')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property3'] = $name;
+        }
+        if ($file = $request->file('image4')){
+            $name = $file ->getClientOriginalName();
+            $file->move('image',$name);
+            $submit['property4'] = $name;
+        }
+        //end of image upload section //
 
         $submit->video = $request->input('video');
         $submit->map = $request->input('address');

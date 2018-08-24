@@ -27,7 +27,7 @@
                         <th scope="row">{{$get->id}}</th>
                         <td>{{$get->user->name}}</td>
                         <td>
-                            <img src="/image/{{$get->property }}" alt="pic" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <img src="/image/{{$get->property1 }}" alt="pic" style="width: 40px; height: 40px; border-radius: 50%;">
                         </td>
                         <td>{{$get->title}}</td>
                         <td>{{$get->created_at->toFormattedDateString()}}</td>

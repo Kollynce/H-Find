@@ -18,8 +18,8 @@
                                 <div class="-columns col-md-6">
                                     <div class="property_item heading_space">
                                         <div class="image">
-                                            <a href="#"><img style="width: 350px;height: 200px;"
-                                                             src="/image/{{ $get->property }}"
+                                            <a href="{{route('property.show', $get->id)}}"><img style="width: 350px;height: 200px;"
+                                                             src="/image/{{ $get->property1 }}"
                                                              class="img-responsive"></a>
                                             <div class="price clearfix">
                                                 <span class="tag pull-right">Ksh: {{$get->price}}/=</span>
