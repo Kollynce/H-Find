@@ -45,6 +45,7 @@
                 {{------------------------form----------------------------}}
 
                 <div class="col-sm-4 bottom40">
+                    <h3 class="text-uppercase bottom20 top15">Send A Message</h3>
                     <form class="callus">
                         <div class="form-group">
                             <input class="form-control" placeholder="Name" type="text">

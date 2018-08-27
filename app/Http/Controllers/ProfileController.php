@@ -18,7 +18,7 @@ class ProfileController extends Controller
         //$users = User::all();
         $users = DB::table('users')
             ->where('user_type','agent')
-            ->get();
+            ->orderBy('id','desc')->paginate(6);
         return view('profile.index')->with('users', $users);
     }
 

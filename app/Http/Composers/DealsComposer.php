@@ -10,6 +10,6 @@ class DealsComposer
 {
     public function compose(View $view)
     {
-        $view->with('submit', Submit::all());
+        $view->with('submit', Submit::orderBy('id','desc')->paginate(6));
     }
 }

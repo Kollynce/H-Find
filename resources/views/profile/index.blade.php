@@ -24,5 +24,8 @@
             @endforeach
             @endif
         </div>
+        <div class="row" style="align-content: center; padding-left: 40%;">
+            <p> {{$users->links()}}</p>
+        </div>
     </div>
 @endsection

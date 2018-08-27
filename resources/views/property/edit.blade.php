@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-uppercase bottom40">Add Your Property</h2>
-                {!! Form::open(['url' => 'property.update', 'files'=> true]) !!}
+                {!! Form::open(['route' => ['property.update',$submit->id], 'files'=> true]) !!}
                 <div class="callus clearfix border_radius submit_property">
                     <div class="row">
                         <div class="col-md-6">

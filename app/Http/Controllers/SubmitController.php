@@ -6,6 +6,7 @@ use App\Submit;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use Illuminate\Support\Facades\Input;
 
 class SubmitController extends Controller
 {
@@ -25,19 +26,19 @@ class SubmitController extends Controller
     public function index()
     {
         $id = \Auth::user()->id;
-        $submit = Submit::whereUserId($id)->get();
+        $submit = Submit::whereUserId($id,'desc')->paginate(10);
         return view('property.index')->with('submit',$submit);
     }
 
     public function admin()
     {
-        $submit = Submit::all();
+        $submit = Submit::orderBy('id','desc')->paginate(10);
         return view('property.admin')->with('submit',$submit);
     }
 
     public function posted()
     {
-        $submit = Submit::all();
+        $submit = Submit::orderBy('id','desc')->paginate(6);
         return view('property.posted')->with('submit',$submit);
     }
 
@@ -64,7 +65,6 @@ class SubmitController extends Controller
             'location' => 'required',
             'status' => 'required',
             'image1' => 'required',
-            'video' => 'required',
             'address' => 'required',
             'price' => 'required',
             'size' => 'required',
@@ -154,6 +154,34 @@ class SubmitController extends Controller
         return view('property.edit')->with('submit',$submit);
     }
 
+
+    public  function search()
+    {
+        $price = $_GET['price'];
+        $status = $_GET['status'];
+        $location = $_GET['location'];
+        $bedroom = $_GET['bedroom'];
+        $bathroom = $_GET['bathroom'];
+        $size = $_GET['size'];
+        $title = $_GET['title'];
+
+        $search = \App\Submit::where([
+            ['price', '>=', $price],
+            ['status', 'LIKE', '%' . $status . '%'],
+            ['bedroom', '>=', $bedroom],
+            ['bathroom', '>=', $bathroom],
+            ['location', 'LIKE', '%' . $location . '%'],
+            ['size', '>=', $size],
+            ['title', 'LIKE', '%' . $title . '%'],
+        ])->get();
+
+        return view('property.search', compact('search'));
+    }
+
+
+
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -164,7 +192,7 @@ class SubmitController extends Controller
     public function update(Request $request, $id)
     {
 
-        $submit = new Submit;
+        $submit = Submit::findOrFail($id);
         $submit->title = $request->input('title');
         $submit->location = $request->input('location');
         $submit->status = $request->input('status');

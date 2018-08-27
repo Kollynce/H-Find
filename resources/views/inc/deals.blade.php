@@ -12,7 +12,7 @@
                     <div class="-columns col-md-4">
                         <div class="property_item heading_space">
                             <div class="image">
-                                <a href="#"><img style="width: 350px;height: 200px;" src="/image/{{ $get->property1 }}" class="img-responsive"></a>
+                                <a href="{{route('property.show', $get->id)}}"><img style="width: 350px;height: 200px;" src="/image/{{ $get->property1 }}" class="img-responsive"></a>
                                 <div class="price clearfix">
                                     <span class="tag pull-right">Ksh: {{$get->price}}/=</span>
                                 </div>
@@ -20,7 +20,7 @@
                             </div>
                             <div class="proerty_content">
                                 <div class="proerty_text">
-                                    <h3 class="captlize"><a href="#">{{$get->title}}</a></h3>
+                                    <h3 class="captlize"><a href="{{route('property.show', $get->id)}}">{{$get->title}}</a></h3>
                                     <p>{{$get->map}}</p>
                                 </div>
                                 <div class="property_meta transparent">
@@ -45,7 +45,9 @@
                     </div>
                 @endforeach
             @endif
-
+                <div class="row" style="align-content: center; padding-left: 40%;">
+                    <p> {{$submit->links()}}</p>
+                </div>
         </div>
 
 

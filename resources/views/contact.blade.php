@@ -50,7 +50,8 @@
         <div class="container">
             <div id="form-messages"></div>
             <div class="form-wrap">
-                <form id="contact-form" action="#" method="post" autocomplete="off">
+                <form id="contact-form" action="{{url('send.php')}}" method="post" autocomplete="off">
+                    {{csrf_field()}}
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <input class="form-control" type="text" placeholder="Your Name" name="name" id="name"
@@ -67,7 +68,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button class="btn btn-primary bg-primary1" type="submit">SEND MESSAGE</button>
+                            <button class="btn btn-primary bg-primary1" type="submit" value="send">SEND MESSAGE</button>
                         </div>
                     </div>
                 </form>

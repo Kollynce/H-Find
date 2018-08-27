@@ -133,18 +133,13 @@
                 <h2 class="text-uppercase bottom20">Video Presentation</h2>
                 <div class="row bottom40">
                     <div class="col-md-12 padding-b-20">
-                        <div class="pro-video">
-                            <figure class="wpf-demo-gallery">
-                                <video  class="video" controls>
-                                    <source src="{{$submit->video}}" type="video/mp4">
-                                    <source src="{{$submit->Video}}" type="video/ogg">
-                                </video>
-                            </figure>
-                        </div>
+                        <h3>Video link</h3>
+                        <a href="{{$submit->video}}" target="_blank"><p>{{$submit->video}}</p></a>
                     </div>
                 </div>
 
                 <div class="row">
+                    <h2 class="text-uppercase bottom20">Contact The agent for clarification</h2>
                     <div class="col-sm-6 bottom40">
                         <div class="agent_wrap">
                             <div class="image">
@@ -189,96 +184,42 @@
 
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 pt-5">
                 <aside>
                     <div class="property-query-area clearfix">
                         <div class="col-md-12 pt-3">
                             <h3 class="text-uppercase bottom20 top15">Advanced Search</h3>
                         </div>
-                        <form class="callus">
+                        <form action="{{route('property.search')}}" method="GET" class="callus">
+                            {{ csrf_field() }}
                             <div class="single-query form-group col-sm-12">
-                                <input class="keyword-input" placeholder="Keyword (e.g. 'office')" type="text">
+                                <input class="keyword-input" name="title" placeholder="Keyword (e.g. 'Home Name')" type="text">
                             </div>
                             <div class="single-query form-group col-sm-12">
-                                <div class="intro">
-                                    <select>
-                                        <option selected="" value="any">Location</option>
-                                        <option>All areas</option>
-                                        <option>Nairobi</option>
-                                        <option>Kisumu</option>
-                                        <option>Mombasa</option>
-                                        <option>Nakuru</option>
-                                        <option>Kisi</option>
-                                    </select>
-                                </div>
+                                <input class="keyword-input" name="location" placeholder="Keyword (e.g. 'Location')" type="text">
                             </div>
                             <div class="single-query form-group col-sm-12">
-                                <div class="intro">
-                                    <select>
-                                        <option class="active">Property Type</option>
-                                        <option>All areas</option>
-                                        <option>Bayonne</option>
-                                        <option>Greenville</option>
-                                        <option>Manhattan</option>
-                                        <option>Queens</option>
-                                        <option>The Heights</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="single-query form-group col-sm-12">
-                                <div class="intro">
-                                    <select>
-                                        <option class="active">Property Status</option>
-                                        <option>Both Rent and Sale</option>
-                                        <option>Rent</option>
-                                        <option>Sale</option>
-                                    </select>
-                                </div>
+                                <input class="keyword-input" name="status" placeholder="Keyword (e.g. 'Rent / Sale')" type="text">
                             </div>
                             <div class="search-2 col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="single-query form-group">
-                                            <div class="intro">
-                                                <select>
-                                                    <option class="active">Min Beds</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                    <option>6</option>
-                                                </select>
-                                            </div>
+                                            <input class="keyword-input" name="bedroom" placeholder="Bedrooms (1-6)" type="text">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="single-query form-group">
-                                            <div class="intro">
-                                                <select>
-                                                    <option class="active">Min Baths</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                    <option>6</option>
-                                                </select>
-                                            </div>
+                                            <input class="keyword-input" name="bathroom" placeholder="Bathrooms (1-6)" type="text">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="single-query form-group">
-                                            <input class="keyword-input" placeholder="Min Area (sq ft)" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="single-query form-group">
-                                            <input class="keyword-input" placeholder="Max Area (sq ft)" type="text">
+                                            <input class="keyword-input" name="size" placeholder="Property Area (sq ft)" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +227,7 @@
                             <div class="col-sm-12 bottom10">
                                 <div class="single-query-slider">
                                     <label><strong>Price Range:</strong></label>
-                                    <input class="keyword-input" placeholder="Price" type="text">
+                                    <input class="keyword-input" name="price" placeholder="Price" type="text">
                                 </div>
                             </div>
                             <div class="col-sm-12 pb-3 form-group">

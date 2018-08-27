@@ -41,6 +41,9 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="row" style="align-content: center; padding-left: 40%;">
+                <p> {{$submit->links()}}</p>
+            </div>
         </div>
     </div>
 @endsection

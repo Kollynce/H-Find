@@ -26,11 +26,21 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator', 'we
 Route::get('property.admin', [
     'as' => 'property.admin', 'uses' => 'SubmitController@admin'
 ]);
+Route::get('property.search', [
+    'as' => 'property.search', 'uses' => 'SubmitController@search'
+]);
 Route::resource('/profile','ProfileController');
-
+Route::post('property/{id}', [
+    'as' => 'property.update', 'uses' => 'SubmitController@update'
+]);
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/contact', 'StaticPageController@contact')->name('contact');
-Route::get('/property/posted','SubmitController@posted');
+Route::post('/contact', 'StaticPageController@contact')->name('contact');
+
+Route::get('property.posted', [
+    'as' => 'property.posted', 'uses' => 'SubmitController@posted'
+]);
 Route::resource('/property','SubmitController');
 Route::get('profile.index', [
     'as' => 'profile.index', 'uses' => 'ProfileController@index'
@@ -38,6 +48,7 @@ Route::get('profile.index', [
 Route::post('update/{id}', [
     'as' => 'profile.update', 'uses' => 'StaticPageController@update'
 ]);
+
 Route::resource('/profile','ProfileController');
 
 
@@ -45,4 +56,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'StaticPageController@profile')->name('profile');
     Route::post('/profile', 'StaticPageController@avatar')->name('update');
 
+});
+
+Route::post('send.php',function (){
+   return view('contact');
 });
