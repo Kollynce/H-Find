@@ -36,7 +36,7 @@ Route::post('property/{id}', [
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'StaticPageController@contact')->name('contact');
-Route::post('/contact', 'StaticPageController@contact')->name('contact');
+Route::post('/contact', 'StaticPageController@postcontact')->name('post_contact');
 
 Route::get('property.posted', [
     'as' => 'property.posted', 'uses' => 'SubmitController@posted'
@@ -56,8 +56,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'StaticPageController@profile')->name('profile');
     Route::post('/profile', 'StaticPageController@avatar')->name('update');
 
-});
-
-Route::post('send.php',function (){
-   return view('contact');
 });

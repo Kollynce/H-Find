@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Image;
 
 class StaticPageController extends Controller
@@ -14,6 +15,29 @@ class StaticPageController extends Controller
     {
         return view('contact');
 
+    }
+    public function postcontact(Request $request)
+    {
+        $this->validate($request,[
+            'email' => 'required|email',
+            'name' => 'required',
+            'message' => 'required',
+            'subject' => 'required'
+            ]);
+        $data = array(
+            'name' => $request-> name,
+            'email' => $request-> email,
+            'subject' => $request-> subject,
+            'bodyMessage' => $request-> message,
+        );
+
+        Mail::send('emails',$data, function ($message) use ($data){
+            $message->from($data['email']);
+            $message->to('housfind@gmail.com');
+            $message->subject($data['subject']);
+        });
+
+        return redirect('/');
     }
 
     public function profile()

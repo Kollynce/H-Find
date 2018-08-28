@@ -50,7 +50,7 @@
         <div class="container">
             <div id="form-messages"></div>
             <div class="form-wrap">
-                <form id="contact-form" action="{{url('send.php')}}" method="post" autocomplete="off">
+                <form id="contact-form" action="{{url('contact')}}" method="post" autocomplete="off">
                     {{csrf_field()}}
                     <div class="row">
                         <div class="col-12 col-sm-6">
