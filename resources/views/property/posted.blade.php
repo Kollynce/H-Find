@@ -47,7 +47,7 @@
                                                 <p class="pull-md-left"><i class="icon-calendar2"></i>&nbsp; Date
                                                     Posted {{$get->created_at->toFormattedDateString()}}</p>
                                                 <ul class="pull-right">
-                                                    <li><a href="#"><i class="icon-like"></i></a></li>
+                                                    <li><a href="#"><i class="icon-home"></i></a></li>
                                                 </ul>
                                             </div>
 
@@ -57,7 +57,7 @@
                             @endforeach
                         @endif
                     </div>
-                    <div class="row" style="align-content: center; padding-left: 40%;">
+                    <div class="row" style="align-content: center; padding-left: 70%;">
                         <p> {{$submit->links()}}</p>
                     </div>
                 </div>

@@ -21,11 +21,12 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator', 'we
    Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
    Route::resource('/users', 'UserController');
    Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
+   Route::get('property.admin', [
+        'as' => 'property.admin', 'uses' => 'SubmitController@admin'
+    ]);
 });
 
-Route::get('property.admin', [
-    'as' => 'property.admin', 'uses' => 'SubmitController@admin'
-]);
+
 Route::get('property.search', [
     'as' => 'property.search', 'uses' => 'SubmitController@search'
 ]);

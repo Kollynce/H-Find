@@ -19,7 +19,6 @@
                 <li><a href="{{route('property.index')}}"><i class="icon-icons215"></i> My Properties</a></li>
                 <li><a href="{{route('property.create')}}"><i class="icon-icons215"></i> Submit Property</a></li>
                 @endcan
-                <li><a href="{{'favorite'}}"><i class="icon-icons43"></i> Favorite Properties</a></li>
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" ><i class="icon-lock-open3"></i>Logout</a></li>
             </ul>
