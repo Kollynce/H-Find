@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Input;
 class SubmitController extends Controller
 {
 
-
+    /** 
+     * This is for thr authentication of routes
+     * **/
     public function __construct()
     {
         $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete','index','show','admin']]);
@@ -26,14 +28,16 @@ class SubmitController extends Controller
     public function index()
     {
         $id = \Auth::user()->id;
-        $submit = Submit::whereUserId($id,'desc')->paginate(10);
-        return view('property.index')->with('submit',$submit);
+        $submit = Submit::whereUserId($id, 'desc')->paginate(10);
+        return view('property.index')->with('submit', $submit);
     }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function admin()
     {
-        $submit = Submit::orderBy('id','desc')->paginate(10);
-        return view('property.admin')->with('submit',$submit);
+        $submit = Submit::orderBy('id', 'desc')->paginate(10);
+        return view('property.admin')->with('submit', $submit);
     }
 
     public function posted()
@@ -139,7 +143,7 @@ class SubmitController extends Controller
     public function show($id)
     {
         $submit = Submit::findOrFail($id);
-        return view('property.show')->with('submit',$submit);
+        return view('property.show')->with('submit', $submit);
     }
 
     /**
