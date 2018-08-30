@@ -251,4 +251,6 @@ class SubmitController extends Controller
         $submit->delete();
         return redirect('/property')->with('success', 'Property has been Submitted');
     }
+
+    
 }
