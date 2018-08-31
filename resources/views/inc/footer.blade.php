@@ -24,7 +24,7 @@
                     <div class="icons"><i class="icon-icons142"></i></div>
                     <ul class="text-center">
                         <li><strong>Email Address</strong></li>
-                        <li><a href="#.">info@h-find.com</a></li>
+                        <li><a href="#">info@hfind.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="footer_panel bottom30">
-                    <a href="#." class="logo bottom30"><img alt="" src="{{asset('images/logo-white.png')}}"></a>
+                    <a href="#" class="logo bottom30"><img alt="" src="{{asset('images/logo-white.png')}}"></a>
                     <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
                         tempor cum consectetuer
                         adipiscing.
@@ -65,13 +65,13 @@
                     <h4 class="bottom30 heading">Latest News</h4>
                     <div class="media bottom30">
                         <div class="media-body">
-                            <a href="#.">Nearest mall in high tech Goes google map your villa</a>
+                            <a href="#">Nearest mall in high tech Goes google map your villa</a>
                             <span><i class="icon-clock5"></i>Feb 22, 2017</span>
                         </div>
                     </div>
                     <div class="media">
                         <div class="media-body">
-                            <a href="#.">Nearest mall in high tech Goes google map your villa</a>
+                            <a href="#">Nearest mall in high tech Goes google map your villa</a>
                             <span><i class="icon-clock5"></i>Feb 22, 2017</span>
                         </div>
                     </div>
@@ -98,11 +98,11 @@
                 </div>
                 <div class="col-md-6 col-sm-7 text-right top15 bottom10">
                     <ul class="social_share">
-                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i></a></li>
-                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i></a></li>
-                        <li><a href="#." class="google"><i class="icon-google4"></i></a></li>
-                        <li><a href="#." class="linkden"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i></a></li>
+                        <li><a href="#" class="facebook"><i class="icon-facebook-1"></i></a></li>
+                        <li><a href="#" class="twitter"><i class="icon-twitter-1"></i></a></li>
+                        <li><a href="#" class="google"><i class="icon-google4"></i></a></li>
+                        <li><a href="#" class="linkden"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#" class="vimo"><i class="icon-vimeo3"></i></a></li>
                     </ul>
                 </div>
             </div>

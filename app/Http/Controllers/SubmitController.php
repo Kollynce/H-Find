@@ -166,8 +166,7 @@ class SubmitController extends Controller
         $location = $_GET['location'];
         $bedroom = $_GET['bedroom'];
         $bathroom = $_GET['bathroom'];
-        $size = $_GET['size'];
-        $title = $_GET['title'];
+        
 
         $search = \App\Submit::where([
             ['price', '>=', $price],
@@ -175,13 +174,26 @@ class SubmitController extends Controller
             ['bedroom', '>=', $bedroom],
             ['bathroom', '>=', $bathroom],
             ['location', 'LIKE', '%' . $location . '%'],
-            ['size', '>=', $size],
-            ['title', 'LIKE', '%' . $title . '%'],
+            
         ])->get();
 
         return view('property.search', compact('search'));
     }
 
+    public  function minsearch()
+    {
+        
+        $status = $_GET['status'];
+        $location = $_GET['location'];
+
+        $search = \App\Submit::where([
+            ['status', 'LIKE', '%' . $status . '%'],
+            ['location', 'LIKE', '%' . $location . '%'],
+            
+        ])->get();
+
+        return view('property.search', compact('search'));
+    }
 
 
 

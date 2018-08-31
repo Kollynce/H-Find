@@ -1,11 +1,11 @@
 <section id="property listing1" class="padding bg_gallery listing1 padding_top">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h2 class="uppercase">real estate properties</h2>
-                <p class="heading_space">We have Properties in these Areas View a list of Featured Properties.</p>
-            </div>
-        </div>
+            <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="uppercase">PROPERTY LISTINGS</h2>
+                        <p class="heading_space">We have Properties in these Areas View a list of Featured Properties.</p>
+                    </div>
+                </div>
         <div class="row">
             @if(count($submit) > 0)
                 @foreach($submit as $get)

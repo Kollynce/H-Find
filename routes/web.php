@@ -30,11 +30,15 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator', 'we
 Route::get('property.search', [
     'as' => 'property.search', 'uses' => 'SubmitController@search'
 ]);
+Route::get('property.minsearch', [
+    'as' => 'property.minsearch', 'uses' => 'SubmitController@minsearch'
+]);
 Route::resource('/profile','ProfileController');
 Route::post('property/{id}', [
     'as' => 'property.update', 'uses' => 'SubmitController@update'
 ]);
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation');
 
 Route::get('/contact', 'StaticPageController@contact')->name('contact');
 Route::post('/contact', 'StaticPageController@postcontact')->name('post_contact');

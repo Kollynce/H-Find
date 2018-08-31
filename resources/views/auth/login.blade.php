@@ -10,7 +10,17 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
+                        @if ($message = session()->get('success'))
+                            <div class="alert alert-success">
+                                <p>{{$message}}</p>
+                            </div>
+                        @endif
 
+                        @if ($message = session()->get('warning'))
+                            <div class="alert alert-success">
+                                <p>{{$message}}</p>
+                            </div>
+                        @endif
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

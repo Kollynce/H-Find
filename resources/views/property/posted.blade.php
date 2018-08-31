@@ -71,9 +71,6 @@
                             <form action="{{route('property.search')}}" method="GET" class="callus">
                                 {{ csrf_field() }}
                                 <div class="single-query form-group col-sm-12">
-                                    <input class="keyword-input" name="title" placeholder="Keyword (e.g. 'Home Name')" type="text">
-                                </div>
-                                <div class="single-query form-group col-sm-12">
                                     <input class="keyword-input" name="location" placeholder="Keyword (e.g. 'Location')" type="text">
                                 </div>
                                 <div class="single-query form-group col-sm-12">
@@ -89,15 +86,6 @@
                                         <div class="col-sm-6">
                                             <div class="single-query form-group">
                                                 <input class="keyword-input" name="bathroom" placeholder="Bathrooms (1-6)" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="single-query form-group">
-                                                <input class="keyword-input" name="size" placeholder="Property Area (sq ft)" type="text">
                                             </div>
                                         </div>
                                     </div>

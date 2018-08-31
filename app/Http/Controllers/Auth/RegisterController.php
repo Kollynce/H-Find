@@ -5,8 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -69,4 +73,50 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function register(Request $request)
+    {
+        $input = $request->all();
+        $validator = $this->validator($input);
+
+        if ($validator->passes()){
+            $user = $this->create($input)->toArray();
+            $user['link'] = str_random(30);
+
+            DB::table('users_activations')->insert(['id_user' => $user['id'], 'token' => $user['link']]);
+            Mail::send('mail.activation', $user, function ($message) use ($user){
+                $message->to($user['email']);
+                $message->subject('H-Find - Activation Code');
+            });
+            session()->flash('success', 'we sent an activation code to your email please check your email');
+            return redirect()->to('login');
+
+        }
+        return back()->with('Error', $validator->errors());
+    }
+
+    public function userActivation($token){
+        $check = DB::table('users_activations')->where('token', $token)->first();
+        if (!is_null($check)){
+
+            $user = User::find($check->id_user);
+            if ($user->is_activated == 1){
+
+                session()->flash('success', 'user activated successfully');
+                return redirect()->to('login');
+            }
+
+            $user->update(['is_activated' => 1]);
+            DB::table('users_activations')->where('token', $token)->delete();
+
+            session()->flash('success', 'user activated successfully');
+
+            return redirect()->to('login');
+        }
+
+        Session()->flash('warning', 'user activated successfully');
+        return redirect()->to('login');
+    }
+
+
 }

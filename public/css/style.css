@@ -2031,15 +2031,7 @@ i.icon-safety-shower{font-size:16px !important;}
 	background:#e0e0e0;
 	color:#2c2c2c;
 }
-#property-d-1-2 {
-  background-color: #fff;
-  position: relative;
-  -moz- transform: translateY(-100%);
-  -ms- transform: translateY(-100%);
-  -o- transform: translateY(-100%);
-  -webkit- transform: translateY(-100%);
-  transform: translateY(-100%);
-}
+
 #property-d-1-2.space{ padding-left:10px; padding-right:10px;}
 #property #property-d-1 .owl-prev, #property #property-d-1 .owl-next{
 	background: #fff;
@@ -4284,5 +4276,15 @@ ul.social_share {
   font-size: 12px;
 }
 }
+
+.main-text
+{
+    position: absolute;
+    top: 70px;
+    width: 96.66666666666666%;
+    color: #FFF;
+    padding-top: 10%;
+}
+
 
 
