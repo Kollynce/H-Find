@@ -31,7 +31,7 @@
                 </li>
             @else
                 <li class="nav-item dropdown">
-                    <img src="/uploads/avatar/{{ Auth::user()->avatar }}" alt="pic" style="width: 32px; height: 32px; position: absolute; top: 10px; bottom: 10px; border-radius: 50%;">
+                    <img src="/image/{{ Auth::user()->avatar }}" alt="pic" style="width: 32px; height: 32px; position: absolute; top: 10px; bottom: 10px; border-radius: 50%;">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position: relative; padding-left: 40px;">
 
                         {{ Auth::user()->name }} <span class="caret"></span>

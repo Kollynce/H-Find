@@ -10,7 +10,7 @@
                     <div class="col-md-2 col-sm-12 px-3 py-3">
                         <img class="img-responsive" style="width: 150px; height: 150px; border-radius: 20px;" src="/image/{{$submits->property1}}" alt="">
                     </div>
-                    <div class="col-md-7 col-sm-12">
+                    <div class="col-md-9 col-sm-12">
                         <div class="feature-p-text">
                             <h4>{{$submits->title}}</h4>
                             <p>{{$submits->map}}</p>
@@ -20,10 +20,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-1">
                         <div class="select-pro-list">
-                            <a href="{{route('property.edit', $submits->id)}}"><i class="icon-pen2"></i></a>
+                        
                             <div class="pt-1"></div>
+                            <a href="{{route('property.edit', $submits->id)}}"><i class="icon-pen2 py-2 px-2"></i></a>
                             {{ Form::open(array('method' => 'delete', 'route' => ['property.destroy' , $submits->id ] )) }}
                                 <button type="submit" class="icons icon-trash py-2 px-2 btn-danger"></button>
                             {{ Form::close() }}

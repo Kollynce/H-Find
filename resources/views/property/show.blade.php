@@ -143,7 +143,7 @@
                     <div class="col-sm-6 bottom40">
                         <div class="agent_wrap">
                             <div class="image">
-                                <img src="/uploads/avatar/{{ $submit->user->avatar }}" alt="Agents">
+                                <img src="/image/{{ $submit->user->avatar }}" alt="Agents">
                             </div>
                         </div>
                     </div>

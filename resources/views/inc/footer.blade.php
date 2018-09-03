@@ -24,7 +24,7 @@
                     <div class="icons"><i class="icon-icons142"></i></div>
                     <ul class="text-center">
                         <li><strong>Email Address</strong></li>
-                        <li><a href="#">info@hfind.com</a></li>
+                        <li><a href="#">info@hfind.co.ke</a></li>
                     </ul>
                 </div>
             </div>

@@ -3,7 +3,7 @@
         <div class="col-md-4 ">
             <h2 class="text-uppercase bottom30">my profile</h2>
             <div class="agent-p-img">
-                <img src="/uploads/avatar/{{ $user->avatar }}" class="img-responsive" alt="image" style="width: 200px; height: 200px;">
+                <img src="/image/{{ $user->avatar }}" class="img-responsive" alt="image" style="width: 200px; height: 200px;">
                 <form enctype="multipart/form-data" action="/profile" method="POST"><br>
                     <input type="file" name="avatar">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"> <br>

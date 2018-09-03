@@ -13,14 +13,11 @@
     <!------------------ Fonts -------------------------------------->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!------------------ Styles -------------------------------------->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootsnav.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/reality-icon.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/foundation-icon.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
 
 
@@ -37,9 +34,5 @@
 <!---------------------- Scripts -------------------------------------->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="{{ asset('js/bootsnav.js') }}" defer></script>
-<script src="{{ asset('js/editor.js') }}" defer></script>
-<script src="{{ asset('js/jquery-2.1.4.js') }}" defer></script>
-<script src="{{ asset('js/selectbox-0.2.min.js') }}" defer></script>
-<script src="{{ asset('js/jquery.parallax-1.1.3.js') }}" defer></script>
 </body>
 </html>

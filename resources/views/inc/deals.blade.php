@@ -35,8 +35,8 @@
                                 </div>
                                 <div class="favroute clearfix">
                                     <p class="pull-md-left"><i class="icon-calendar2"></i>&nbsp; Date Posted {{$get->created_at->toFormattedDateString()}}</p>
-                                    <ul class="pull-right">
-                                        <li><a href="#"><i class="icon-home"></i></a></li>
+                                    <ul class="pull-right pl-4">
+                                        <li class="pl-4"><a href="#"><i class="icon-home"></i></a></li>
                                     </ul>
                                 </div>
 
